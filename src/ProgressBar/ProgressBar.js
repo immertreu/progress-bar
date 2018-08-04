@@ -12,6 +12,7 @@ class ProgressBar extends Component {
     maxValue: PropTypes.number,
     dimensionsClass: PropTypes.string,
     decoClass: PropTypes.string,
+    animate: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -19,6 +20,7 @@ class ProgressBar extends Component {
     maxValue: 100,
     dimensionsClass: 'progress-bar-default-dimensions',
     decoClass: 'progress-bar-default-deco',
+    animate: true,
   };
 
   componentDidMount() {
@@ -27,6 +29,10 @@ class ProgressBar extends Component {
       maxValue,
       value,
     } = this.props;
+
+    if (minValue > maxValue) {
+      throw new Error('Min value must be less than max value');
+    }
 
     if (value > maxValue) {
       throw new Error('Initial value cannot be greater than max value');
@@ -44,6 +50,7 @@ class ProgressBar extends Component {
       value,
     } = this.props;
 
+
     if (value >= maxValue) {
       return 100;
     }
@@ -54,7 +61,7 @@ class ProgressBar extends Component {
 
     const distance = maxValue - minValue;
 
-    return (value * 100) / distance;
+    return Math.round((value * 100) / distance);
   };
 
   formatPercentageString = (num) => `${num}%`;
@@ -63,6 +70,7 @@ class ProgressBar extends Component {
     const {
       decoClass,
       dimensionsClass,
+      animate,
     } = this.props;
 
     const value = this.getValueAsPercentage();
@@ -70,12 +78,15 @@ class ProgressBar extends Component {
 
     return (
       <div className={`progress-bar-wrapper ${decoClass} ${dimensionsClass}`}>
-        <div
-          className="progress-bar"
-          style={{
-            width: stringValue,
-          }}
-        />
+        <div className="progress-bar-track">
+          <div
+            className="progress-bar"
+            style={{
+              width: stringValue,
+              transition: animate ? 'width 0.3s' : null,
+            }}
+          />
+        </div>
         <p className="progress-bar-label">{stringValue}</p>
       </div>
     );

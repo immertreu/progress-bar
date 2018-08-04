@@ -1,11 +1,17 @@
-.progress-bar-default-dimensions {
-  height: 50px;
-  width: 100%; }
-  .progress-bar-default-dimensions .progress-bar {
-    height: 100%; }
+.progress-bar-default-dimensions .progress-bar-track {
+  width: 100%;
+  height: 50px; }
+
+.progress-bar-default-dimensions .progress-bar {
+  height: 100%; }
 
 .progress-bar-default-deco {
-  border: 1px solid blue;
-  border-radius: 3px; }
+  font-family: 'Avenir', 'Arial', 'sans-serif';
+  color: #666666; }
+  .progress-bar-default-deco .progress-bar-track {
+    border: 1px solid #808080;
+    border-radius: 3px; }
   .progress-bar-default-deco .progress-bar {
-    background-color: #000; }
+    background-color: #808080; }
+  .progress-bar-default-deco p {
+    font-weight: bold; }

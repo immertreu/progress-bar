@@ -10,9 +10,8 @@
   margin: 0 auto;
   width: 50%;
   text-align: left; }
-
-.demo {
-  margin-bottom: 40px; }
+  .demos .demo {
+    margin-bottom: 40px; }
 
 .demo-buttons {
   margin-bottom: 20px; }
@@ -24,6 +23,7 @@
     border: none;
     color: #fff;
     font-family: 'Avenir', 'Arial', 'sans-serif';
-    font-size: 1.2em; }
+    font-size: 1.2em;
+    transition: 0.3s; }
     .demo-buttons .demo-button:hover {
       background-color: #e60000; }

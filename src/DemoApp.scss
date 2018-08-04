@@ -13,10 +13,10 @@
   margin: 0 auto;
   width: 50%;
   text-align: left;
-}
 
-.demo {
-  margin-bottom: 40px;
+  .demo {
+    margin-bottom: 40px;
+  }
 }
 
 .demo-buttons {
@@ -31,6 +31,7 @@
     color: #fff;
     font-family: 'Avenir', 'Arial', 'sans-serif';
     font-size: 1.2em;
+    transition: 0.3s;
 
     &:hover {
       background-color: darken(#ff4d4d, 20%);
