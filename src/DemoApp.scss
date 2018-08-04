@@ -1,11 +1,13 @@
+@import './ProgressBar/Styles/Variables.scss';
+
 .app {
   text-align: center;
-  color: #666666;
-  font-family: 'Avenir', 'Arial', 'sans-serif';
-  font-size: 14px;
+  color: $dark-gray;
+  font-family: $font-family;
+  font-size: $base-font-size;
 
   h1 {
-    font-size: 2em;
+    font-size: $h1-font-size;
   }
 }
 
@@ -25,16 +27,16 @@
   .demo-button {
     margin-right: 20px;
     padding: 10px;
-    background-color: #ff4d4d;
-    border-radius: 3px;
+    background-color: $contrast;
+    border-radius: $border-radius;
     border: none;
-    color: #fff;
-    font-family: 'Avenir', 'Arial', 'sans-serif';
-    font-size: 1.2em;
+    color: $white;
+    font-family: $font-family;
+    font-size: $h2-font-size;
     transition: 0.3s;
 
     &:hover {
-      background-color: darken(#ff4d4d, 20%);
+      background-color: darken($contrast, 20%);
     }
   }
 }

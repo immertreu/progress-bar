@@ -1,7 +1,7 @@
 .app {
   text-align: center;
   color: #666666;
-  font-family: 'Avenir', 'Arial', 'sans-serif';
+  font-family: "Avenir", "Arial", "sans-serif";
   font-size: 14px; }
   .app h1 {
     font-size: 2em; }
@@ -22,7 +22,7 @@
     border-radius: 3px;
     border: none;
     color: #fff;
-    font-family: 'Avenir', 'Arial', 'sans-serif';
+    font-family: "Avenir", "Arial", "sans-serif";
     font-size: 1.2em;
     transition: 0.3s; }
     .demo-buttons .demo-button:hover {

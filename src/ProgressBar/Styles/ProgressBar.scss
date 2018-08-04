@@ -1,0 +1,31 @@
+@import './Variables.scss';
+
+.progress-bar-default-dimensions {
+  .progress-bar-track {
+    width: 100%;
+    height: 50px;
+  }
+
+  .progress-bar {
+    height: 100%;
+  }
+}
+
+.progress-bar-default-deco {
+  font-family: $font-family;
+  font-size: $base-font-size;
+  color: $dark-gray;
+
+  .progress-bar-track {
+    border: 1px solid $med-gray;
+    border-radius: $border-radius;
+  }
+
+  .progress-bar {
+    background-color: $med-gray;
+  }
+
+  p {
+    font-weight: bold;
+  }
+}
