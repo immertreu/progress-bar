@@ -4,6 +4,7 @@ import ProgressBar from './ProgressBar/ProgressBar';
 import DemoButtons from './DemoButtons';
 
 import './DemoApp.css';
+import './Demo3.css';
 
 class DemoApp extends Component {
   state = {
@@ -47,7 +48,7 @@ class DemoApp extends Component {
           </div>
           <div className="demo">
             <DemoButtons
-              handleRun={() => this.runProgressBar({ stateField: 'valueDemo2', maxValue: 90, minValue: 5, inc: -5 })}
+              handleRun={() => this.runProgressBar({ stateField: 'valueDemo2', maxValue: 90, minValue: 5, inc: -3.5 })}
               handleReset={() => this.resetDemo('valueDemo2', 90)}
             />
             <p className="info">Decreases every 300ms. Animation is turned off. Custom max and min value are supplied.</p>
@@ -56,6 +57,17 @@ class DemoApp extends Component {
               maxValue={90}
               minValue={5}
               animate={false}
+            />
+          </div>
+          <div className="demo">
+            <DemoButtons
+              handleRun={() => this.runProgressBar({ stateField: 'valueDemo3' })}
+              handleReset={() => this.resetDemo('valueDemo3')}
+            />
+            <p className="info">Custom styling demonstration. Has more glitter.</p>
+            <ProgressBar
+              value={this.state.valueDemo3}
+              decoClass="progress-bar-demo-deco"
             />
           </div>
         </div>

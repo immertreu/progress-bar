@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import './ProgressBar.css';
+import './Styles/ProgressBar.css';
 
 class ProgressBar extends Component {
   static displayName = 'ProgressBar';
@@ -18,8 +18,6 @@ class ProgressBar extends Component {
   static defaultProps = {
     minValue: 0,
     maxValue: 100,
-    dimensionsClass: 'progress-bar-default-dimensions',
-    decoClass: 'progress-bar-default-deco',
     animate: true,
   };
 
@@ -60,8 +58,8 @@ class ProgressBar extends Component {
     }
 
     const distance = maxValue - minValue;
-
-    return Math.round((value * 100) / distance);
+    const distanceFromMin = value - minValue;
+    return Math.round((distanceFromMin * 100) / distance);
   };
 
   formatPercentageString = (num) => `${num}%`;
@@ -77,7 +75,7 @@ class ProgressBar extends Component {
     const stringValue = this.formatPercentageString(value);
 
     return (
-      <div className={`progress-bar-wrapper ${decoClass} ${dimensionsClass}`}>
+      <div className={`progress-bar-wrapper progress-bar-default-dimensions progress-bar-default-deco ${decoClass} ${dimensionsClass}`}>
         <div className="progress-bar-track">
           <div
             className="progress-bar"

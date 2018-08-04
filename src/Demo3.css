@@ -1,0 +1,10 @@
+.progress-bar-demo-deco {
+  color: #e69900; }
+  .progress-bar-demo-deco .progress-bar-track {
+    border: 1px solid #e69900;
+    border-radius: 3px; }
+  .progress-bar-demo-deco .progress-bar {
+    background-image: url("./glitter.jpg");
+    background-repeat: repeat; }
+  .progress-bar-demo-deco p {
+    font-weight: bold; }

@@ -1,0 +1,19 @@
+@import './ProgressBar/Styles/Variables.scss';
+
+.progress-bar-demo-deco {
+  color: #e69900;
+
+  .progress-bar-track {
+    border: 1px solid #e69900;
+    border-radius: $border-radius;
+  }
+
+  .progress-bar {
+    background-image: url("./glitter.jpg");
+    background-repeat: repeat;
+  }
+
+  p {
+    font-weight: bold;
+  }
+}
