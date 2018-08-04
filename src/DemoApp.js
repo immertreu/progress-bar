@@ -1,23 +1,33 @@
 import React, { Component } from 'react';
 
 import ProgressBar from './ProgressBar/ProgressBar';
+import DemoButtons from './DemoButtons';
 
 import './DemoApp.css';
 
 class DemoApp extends Component {
   state = {
-    value: 0
+    valueDemo1: 0,
+    valueDemo2: 90,
+    valueDemo3: 0,
   };
 
-  runProgressBar = () => {
+  runProgressBar = ({ stateField, maxValue = 100, minValue = 0, inc = 5}) => {
     const interval = setInterval(() => {
-      const value = this.state.value;
-      if (value >= 100) {
+      const value = this.state[stateField];
+
+      if (inc >= 0 && value >= maxValue) {
+        clearInterval(interval);
+      } else if (inc < 0 && value <= minValue ) {
         clearInterval(interval);
       } else {
-        this.setState({ value: value + 10 });
+        this.setState({ [stateField]: value + inc });
       }
-    }, 100);
+    }, 300);
+  };
+
+  resetDemo = (stateField, value = 0) => {
+    this.setState({ [stateField]: value });
   };
 
   render() {
@@ -25,8 +35,25 @@ class DemoApp extends Component {
       <div className="app">
         <h1>Test app</h1>
         <div className="demos">
-          <button onClick={this.runProgressBar}>Run</button>
-          <ProgressBar value={this.state.value} />
+          <div className="demo">
+            <DemoButtons
+              handleRun={() => this.runProgressBar({ stateField: 'valueDemo1' })}
+              handleReset={() => this.resetDemo('valueDemo1')}
+            />
+            <ProgressBar
+              value={this.state.valueDemo1}
+            />
+          </div>
+          <div className="demo">
+            <DemoButtons
+              handleRun={() => this.runProgressBar({ stateField: 'valueDemo2', inc: -5 })}
+              handleReset={() => this.resetDemo('valueDemo2')}
+            />
+            <ProgressBar
+              value={this.state.valueDemo2}
+              maxValue={90}
+            />
+          </div>
         </div>
       </div>
     );
