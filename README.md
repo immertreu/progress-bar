@@ -1,2 +1,2 @@
 # progress-bar
-progress-var
+progress-bar
