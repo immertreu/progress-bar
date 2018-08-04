@@ -1,0 +1,11 @@
+.progress-bar-default-dimensions {
+  height: 50px;
+  width: 100%; }
+  .progress-bar-default-dimensions .progress-bar {
+    height: 100%; }
+
+.progress-bar-default-deco {
+  border: 1px solid blue;
+  border-radius: 3px; }
+  .progress-bar-default-deco .progress-bar {
+    background-color: #000; }
