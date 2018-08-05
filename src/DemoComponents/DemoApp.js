@@ -14,12 +14,18 @@ class DemoApp extends Component {
   };
 
   runProgressBar = ({ stateField, maxValue = 100, minValue = 0, inc = 5}) => {
-    const interval = setInterval(() => {
+    if (!inc) {
+      return;
+    }
+
+    this.interval = setInterval(() => {
       const value = this.state[stateField];
-      const hasReachedMax = inc >= 0 && value >= maxValue;
+
+      const hasReachedMax = inc > 0 && value >= maxValue;
       const hasReachedMin = inc < 0 && value <= minValue;
+
       if (hasReachedMax || hasReachedMin) {
-        clearInterval(interval);
+        clearInterval(this.interval);
       } else {
         this.setState({ [stateField]: value + inc });
       }
@@ -27,6 +33,7 @@ class DemoApp extends Component {
   };
 
   resetDemo = (stateField, value = 0) => {
+    clearInterval(this.interval);
     this.setState({ [stateField]: value });
   };
 
