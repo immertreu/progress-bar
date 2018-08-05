@@ -16,10 +16,9 @@ class DemoApp extends Component {
   runProgressBar = ({ stateField, maxValue = 100, minValue = 0, inc = 5}) => {
     const interval = setInterval(() => {
       const value = this.state[stateField];
-
-      if (inc >= 0 && value >= maxValue) {
-        clearInterval(interval);
-      } else if (inc < 0 && value <= minValue ) {
+      const hasReachedMax = inc >= 0 && value >= maxValue;
+      const hasReachedMin = inc < 0 && value <= minValue;
+      if (hasReachedMax || hasReachedMin) {
         clearInterval(interval);
       } else {
         this.setState({ [stateField]: value + inc });
