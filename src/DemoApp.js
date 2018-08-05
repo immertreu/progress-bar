@@ -34,7 +34,7 @@ class DemoApp extends Component {
   render() {
     return (
       <div className="app">
-        <h1>Test app</h1>
+        <h1>Progress Bar Demo</h1>
         <div className="demos">
           <div className="demo">
             <DemoButtons

@@ -18,6 +18,8 @@ class ProgressBar extends Component {
   static defaultProps = {
     minValue: 0,
     maxValue: 100,
+    dimensionsClass: '',
+    decoClass: '',
     animate: true,
   };
 
