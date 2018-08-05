@@ -4,6 +4,6 @@
     border: 1px solid #e69900;
     border-radius: 3px; }
   .progress-bar-demo-deco .progress-bar {
-    background: url("./glitter.jpg") repeat; }
+    background: url("../glitter.jpg") repeat; }
   .progress-bar-demo-deco p {
     font-weight: bold; }

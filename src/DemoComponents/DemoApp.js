@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import ProgressBar from './ProgressBar/ProgressBar';
+import ProgressBar from '../ProgressBar/ProgressBar';
 import DemoButtons from './DemoButtons';
 
-import './DemoApp.css';
-import './Demo3.css';
+import '../DemoStyles/DemoApp.css';
+import '../DemoStyles/Demo3.css';
 
 class DemoApp extends Component {
   state = {

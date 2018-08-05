@@ -1,4 +1,4 @@
-@import './ProgressBar/Styles/Variables.scss';
+@import '../ProgressBar/Styles/Variables.scss';
 
 .progress-bar-demo-deco {
   color: #e69900;
@@ -9,7 +9,7 @@
   }
 
   .progress-bar {
-    background: url('./glitter.jpg') repeat;
+    background: url('../glitter.jpg') repeat;
   }
 
   p {
